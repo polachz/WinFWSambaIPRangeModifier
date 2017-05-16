@@ -1,7 +1,3 @@
-﻿#
-# Script to 
-# Author: Zdenek Polach
-# 
 #
 #title           :smb_fw_ranges.ps1
 #description     :modify remote IP ranges for Incomming Samba FW rules 
