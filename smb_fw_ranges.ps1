@@ -8,7 +8,7 @@
 #author          :zdenek polach ( https://github.com/polachz )
 #date            :16.05.2017
 #version         :0.1
-#usage           :smb_fw_ranges.ps1 public 10.10.1.0/24 10.10.2.3-10.10.2.20
+#usage           :smb_fw_ranges.ps1 public 10.10.1.0/24, 10.10.2.3-10.10.2.20
 #notes           :
 #==============================================================================
 #
@@ -52,8 +52,7 @@ if($Subnets.Count -eq 0 ){
 	exit
 }
 
-#$IpRanges =@("172.17.17.50-172.17.17.70", "172.17.18.210/27")
-			 
+		 
 # Get all public profiles in FileSharing group
 $RulesSet = Get-NetFirewallRule | where {$_.DisplayGroup -match "File and Printer Sharing" -and $_.Direction -eq "Inbound" -and $_.Profile -match "Public" }
 #Sometimes, one rule has privatge and public profile set together
